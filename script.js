@@ -17,6 +17,8 @@ const btnMultiply = document.getElementById("*")
 const btnDivide = document.getElementById("/")
 const btnClear = document.getElementById("clear")
 
+const display = document.getElementById("display")
+
 //basic math operations functions
 function add(num1, num2) {
     return num1 + num2;
