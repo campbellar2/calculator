@@ -24,27 +24,21 @@ function updateDisplay() {
 
 updateDisplay();
  
-//basic math operations functions
-function add(num1, num2) {
-    return num1 + num2;
-}
-function subtract(num1, num2) {
-    return num1 - num2;
-}
-function multiply(num1, num2) {
-    return num1 * num2;
-}
-function divide(num1, num2) {
-    if (num2 === 0) { return 'nice try' }
-    return num1 / num2;
-}
-
 //operator function
 function operate(operator, num1, num2) {
-    if (operator === "+") { return add(num1, num2) }
-    else if (operator === "-") { return subtract(num1, num2) }
-    else if (operator === "*") { return multiply(num1, num2) }
-    else { return divide(num1, num2) };
+    if (operator === "+") {
+        return (num1 + num2);
+    } else if (operator === "-") { 
+        return (num1 - num2);
+    } else if (operator === "*") { 
+        return (num1 * num2);
+    } else if (operator === '/') { 
+        if (num2 === 0) {
+            return 'nice try'
+        } else {
+            return (num1 / num2);
+        };
+    };
 }
 
 //funcion to update the display when buttons are clicked
@@ -101,6 +95,7 @@ function inputOperand(operand) {
     }
 }
 
+//when user clicks on operator button
 function inputOperator(operator) {
     if (firstOperator != null && secondOperator === null) {
         //handling chain operations
