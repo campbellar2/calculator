@@ -7,6 +7,7 @@ let secondOperand = null;
 let firstOperator = null;
 let secondOperator = null;
 let result = null;
+
 //connect buttons to keyboard
 window.addEventListener('keydown', function(e) {
     const key = document.querySelector(`button[data-key=${e.key}]`);
@@ -66,8 +67,8 @@ function clickButton() {
                 clearDisplay();
                 updateDisplay();
             }
-        })
-    }
+        });
+    };
 }
 
 clickButton();
@@ -75,7 +76,6 @@ clickButton();
 //when user clicks on operand button
 function inputOperand(operand) {
     if (firstOperator === null) {
-        
         if (displayValue === '0' || displayValue === 0) {
             //first click, initializes first operand
             displayValue = operand;
@@ -92,7 +92,7 @@ function inputOperand(operand) {
         } else {
             displayValue += operand;
         }
-    }
+    };
 }
 
 //when user clicks on operator button
@@ -101,14 +101,14 @@ function inputOperator(operator) {
         //handling chain operations
         secondOperator = operator;
         secondOperand = displayValue;
-        result = operate(FirstOperator, Number(firstOperand), Number(secondOperand));
+        result = operate(firstOperator, Number(firstOperand), Number(secondOperand));
         displayValue = result;
         firstOperand = displayValue;
         result = null; 
     } else if (firstOperator != null && secondOperator != null) {
         //chain operations after having second operator
         secondOperand = displayValue;
-        result = operate(SecondOperator, Number(firstOperand), Number(secondOperand));
+        result = operate(secondOperator, Number(firstOperand), Number(secondOperand));
         secondOperator = operator
         displayValue = result;
         firstOperand = displayValue;
@@ -117,5 +117,33 @@ function inputOperator(operator) {
         //standard handling of first operator
         firstOperator = operator;
         firstOperand = displayValue;
-    }
+    };
+}
+
+//when user clicks on equals button
+function inputEquals() {
+    if (firstOperator === null) {
+        //prevents hitting equals before operator is selected
+        displayValue = displayValue;
+    } else if (secondOperator != null) {
+        //final result after chain operation
+        secondOperand = displayValue;
+        result = operate(secondOperator, Number(firstOperand), Number(secondOperand));
+        displayValue = result;
+        firstOperand = displayValue;
+        secondOperand = null;
+        firstOperator = null;
+        secondOperator = null;
+        result = null;
+    } else {
+        //standard operation
+        secondOperand = displayValue;
+        result = operate(firstOperator, Number(firstOperand), Number(secondOperand));
+        displayValue = result;
+        firstOperand = displayValue;
+        secondOperand = null;
+        firstOperator = null;
+        secondOperator = null;
+        result = null;
+    };
 }
