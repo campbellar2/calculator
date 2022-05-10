@@ -147,3 +147,13 @@ function inputEquals() {
         result = null;
     };
 }
+
+//when user clicks on decimal button
+function inputDecimal() {
+    if (displayValue === firstOperand || displayValue === secondOperand) {
+        displayValue = 0;
+        displayValue += '.';
+    } else if (!displayValue.includes('.')) {
+        displayValue += '.';
+    };
+}
