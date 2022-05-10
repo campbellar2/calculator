@@ -78,3 +78,25 @@ function clickButton() {
 
 clickButton();
 
+//when user clicks on operand button
+function inputOperand(operand) {
+    if (operator === null) {
+        
+        if (displayValue === '0' || displayValue === 0) {
+            //first click, initializes first operand
+            displayValue = operand;
+        } else if (displayValue === firstOperand) {
+            //enables continued calculation after hitting equals
+            displayValue = operand;
+        } else {
+            //enables multidigit operands
+            displayValue += operand;
+        }
+    } else {
+        if (displayValue === firstOperand) {
+            displayValue = operand;
+        } else {
+            displayValue += operand;
+        }
+    }
+}
