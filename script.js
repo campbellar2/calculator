@@ -4,9 +4,9 @@ const buttons = document.querySelectorAll("button");
 let displayValue = '0';
 let firstOperand = null;
 let secondOperand = null;
-let operator = null;
+let firstOperator = null;
+let secondOperator = null;
 let result = null;
-
 //connect buttons to keyboard
 window.addEventListener('keydown', function(e) {
     const key = document.querySelector(`button[data-key=${e.key}]`);
@@ -80,7 +80,7 @@ clickButton();
 
 //when user clicks on operand button
 function inputOperand(operand) {
-    if (operator === null) {
+    if (firstOperator === null) {
         
         if (displayValue === '0' || displayValue === 0) {
             //first click, initializes first operand
@@ -98,5 +98,29 @@ function inputOperand(operand) {
         } else {
             displayValue += operand;
         }
+    }
+}
+
+function inputOperator(operator) {
+    if (firstOperator != null && secondOperator === null) {
+        //handling chain operations
+        secondOperator = operator;
+        secondOperand = displayValue;
+        result = operate(FirstOperator, Number(firstOperand), Number(secondOperand));
+        displayValue = result;
+        firstOperand = displayValue;
+        result = null; 
+    } else if (firstOperator != null && secondOperator != null) {
+        //chain operations after having second operator
+        secondOperand = displayValue;
+        result = operate(SecondOperator, Number(firstOperand), Number(secondOperand));
+        secondOperator = operator
+        displayValue = result;
+        firstOperand = displayValue;
+        result = null;
+    } else {
+        //standard handling of first operator
+        firstOperator = operator;
+        firstOperand = displayValue;
     }
 }
