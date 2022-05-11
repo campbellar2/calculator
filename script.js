@@ -157,3 +157,13 @@ function inputDecimal() {
         displayValue += '.';
     };
 }
+
+//when user clicks on percent button
+function inputPercent(num) {
+    displayValue = (num / 100).toString();
+}
+
+//when user clicks on sign button
+function inputSign(num) {
+    displayValue = (num * -1).toString();
+}
