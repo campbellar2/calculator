@@ -33,7 +33,7 @@ function operate(operator, num1, num2) {
         return (num1 - num2);
     } else if (operator === "*") { 
         return (num1 * num2);
-    } else if (operator === '/') { 
+    } else if (operator === "/") { 
         if (num2 === 0) {
             return 'nice try'
         } else {
@@ -166,4 +166,14 @@ function inputPercent(num) {
 //when user clicks on sign button
 function inputSign(num) {
     displayValue = (num * -1).toString();
+}
+
+//when user clicks on clear button
+function clearDisplay() {
+    displayValue = '0';
+    firstOperand = null;
+    secondOperand = null;
+    firstOperator = null;
+    secondOperator = null;
+    result = null;
 }
