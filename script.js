@@ -8,12 +8,6 @@ let firstOperator = null;
 let secondOperator = null;
 let result = null;
 
-//connect buttons to keyboard
-window.addEventListener('keydown', function(e) {
-    const key = document.querySelector(`button[data-key=${e.key}]`);
-    key.click();
-});
-
 //update display function
 function updateDisplay() {
     const display = document.getElementById("display");
