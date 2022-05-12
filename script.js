@@ -45,6 +45,7 @@ function clickButton() {
                 updateDisplay();
             } else if (buttons[i].classList.contains('operator')) {
                 inputOperator(buttons[i].value);
+                updateDisplay();
             } else if (buttons[i].classList.contains('equals')) {
                 inputEquals();
                 updateDisplay();
