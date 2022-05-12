@@ -1,6 +1,15 @@
+#calculator {
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 #container {
-    max-height: 300px;
-    max-width: 200px;
+    height: 300px;
+    width: 200px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
