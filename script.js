@@ -1,3 +1,11 @@
+//TODO List
+//rounding function to fix display errors, numbers floating past display
+//dbl click numbers -> 3 numbers
+//pressing operator button multiple times in a row exponentially operates on display value
+//make equals repeat the last operation on result, ie 1 + 1 = 2, press = you get 3, press again you get 4
+//negative/positive operator time requirement
+
+
 //document selectors
 const buttons = document.querySelectorAll("button");
 //important global variables
