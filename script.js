@@ -5,6 +5,8 @@
 //make equals repeat the last operation on result, ie 1 + 1 = 2, press = you get 3, press again you get 4
 //negative/positive operator time requirement
 //NaN on display after dividing by 0 and getting 'nice try'
+//backspace button/clear button && clear all button
+//keyboard functionality
 
 
 //document selectors
