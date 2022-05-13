@@ -1,5 +1,9 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #calculator {
-    background-color: aliceblue;
+    background-color: rgb(238, 204, 236);
     position: fixed;
     top: 0;
     left: 0;
@@ -8,23 +12,82 @@
 }
 
 #container {
-    height: 300px;
-    width: 200px;
+    height: 375px;
+    width: 250px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    margin: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     justify-content: center;
-    gap: 2px;
-    border: 10px solid lightgrey;
+    gap: 1px;
+    border: 12px solid rgb(160, 132, 167);
     border-radius: 4px;
-    background-color: black;
+    background-color: rgb(17, 17, 17);
 }
 
 #display {
     display: flex;
     flex-direction: row-reverse;
-    background-color: gray;
+    align-items: center;
+    background-color: rgb(109, 109, 109);
     grid-column-start: 1;
     grid-column-end: 5;
+    font-size: 32px;
+    color: rgb(255, 246, 234);
+    border: 2px solid black;
+}
+
+button {
+    background-color: rgb(245, 237, 212);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    font-size: 20px;
+    border: 1px solid black;
+    box-shadow: 0 2px #999;
+}
+
+button:hover {
+    background-color: rgb(212, 203, 175);
+}
+
+button:active {
+    background-color: rgb(212, 203, 175);
+    box-shadow: 0 0px #999;
+    transform: translate(1px);
+}
+
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.sign, .percent, .operator {
+    background-color: rgb(236, 156, 136);
+}
+
+.sign:hover, .percent:hover, .operator:hover {
+    background-color: rgb(206, 138, 122);
+}
+
+.clear {
+    background-color: rgb(240, 241, 141);
+}
+
+.clear:hover {
+    background-color: rgb(209, 211, 120)
+}
+
+.equals {
+    background-color: rgb(180, 231, 150);
+}
+
+.equals:hover {
+    background-color: rgb(160, 206, 134);
 }
